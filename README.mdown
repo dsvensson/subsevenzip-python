@@ -3,6 +3,12 @@ SubSevenZip
 
 A 7zip extractor written in python, supports only a subset of the 7zip spec. At the moment only LZMA1 encoding is supported, might add more codecs later. The reason this module exists is just to toy with the format, before writing a JavaScript version that can extract a very well defined set of files.
 
+.. image:: https://secure.travis-ci.org/dsvensson/subsevenzip-python.png?branch=master
+    :target: https://travis-ci.org/dsvensson/subsevenzip-python
+
+.. image:: https://coveralls.io/repos/dsvensson/subsevenzip-python/badge.png?branch=master
+    :target: https://coveralls.io/r/dsvensson/subsevenzip-python
+
 Related
 -------
 
