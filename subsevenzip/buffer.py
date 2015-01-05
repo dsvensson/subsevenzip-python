@@ -49,7 +49,7 @@ class ReadBuffer(object):
         if self._limit is None:
             return
         if self._fd.tell() > self._limit:
-            raise IOError("ReadBuffer limit breached! (limit: %d, position: %d)" % (self._limit, self._fd.tell()))
+            raise IOError("Overflow, position:%d > limit:%d" % (self._fd.tell(), self._limit))
 
     def set_limit(self, limit, absolute=False):
         if absolute:
