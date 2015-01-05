@@ -25,9 +25,10 @@ from .buffer import ReadBuffer
 
 def parse_pack_info(buf, archive):
     archive["compressed_offset"] = buf.get_varint()
+
     n_streams = buf.get_varint()
     if n_streams != 1:
-        raise NotImplementedError("Only single stream files supported")
+        raise NotImplementedError("Only single stream files supported (n_streams: %d)" % n_streams)
 
     nid = buf.get_uint8()
     if nid == PropertyId.kSize:
