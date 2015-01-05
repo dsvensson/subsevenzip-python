@@ -49,7 +49,13 @@ class FilesInfoBuilder(object):
         self.empty_stream_mask = mask
 
     def build(self):
-        try:
-            return [File(self.names[idx], self.sizes[idx], self.offsets[idx], ((1 << idx) & self.empty_stream_mask) == 0) for idx in range(self.count)]
-        finally:
-            self.reset(0)
+        result = [None] * self.count
+        for idx in range(self.count):
+            result[idx] = File(
+                self.names[idx],
+                self.sizes[idx],
+                self.offsets[idx],
+                ((1 << idx) & self.empty_stream_mask) == 0
+            )
+        self.reset(0)
+        return result
