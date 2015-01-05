@@ -250,8 +250,8 @@ def parse_signature_header(buf):
     if magic != buf.get_bytes(6):
         raise BadSevenZipArchive("Bad magic")
 
-    major = buf.get_uint8()
-    minor = buf.get_uint8()
+    buf.get_uint8()  # major version
+    buf.get_uint8()  # minor version
 
     crc = buf.get_uint32()
 
