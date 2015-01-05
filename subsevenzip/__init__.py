@@ -12,5 +12,5 @@
 # OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 # PERFORMANCE OF THIS SOFTWARE.
 
-from .archive import open
-from .exceptions import BadSevenZipArchive
+from .archive import open                   # noqa
+from .exceptions import BadSevenZipArchive  # noqa
